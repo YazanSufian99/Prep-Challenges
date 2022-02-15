@@ -29,8 +29,8 @@ const objLat = (obj) => {
     firstName= firstName.charAt(0).toUpperCase() + firstName.slice(1);
     lastName= lastName.charAt(0).toUpperCase() + lastName.slice(1);
     
-    return `my name is ${firstName} ${lastName} I am ${age} YO, and I love ${hobby}.`;
-  };
+    return `my name is ${firstName} ${lastName} I am ${age} YO, and I love ${hobby}.`
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -93,7 +93,18 @@ const objLat = (obj) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvFormatter = (arr) => {
-    // write your code here
+   
+    let result= [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].yearsOfExperience >1) {
+            let app={
+                fullname:(arr[i].lastName !== null)? `${arr[i].firstName} ${arr[i].lastName} ` : `${arr[i].firstName}`,
+                tech: arr[i].tech
+            }
+            result.push(app);
+        }
+    }
+    return result;
 };
 // -------------------------------------------------------------------------------------------------------
 
