@@ -117,7 +117,33 @@ const roundDecimals = (arr) => {
 //
 
 const employeesBonus = (arr) => {
-    // write your code here
+    // console.log(data);
+    let newdata=[];
+    for (let i = 0; i < arr.length; i++) {
+        // console.log(arr[i].workHours);
+        if (arr[i].workHours > 8  ) {
+         
+            let app={
+                Nname :arr[i].name,
+                Nsection:arr[i].section,
+                NworkHourse:arr[i].workHours,
+                Nsalary:(parseInt(arr[i].salary)+100)+"$"
+            }
+            newdata.push(app);
+        }
+        else {
+            
+            let app={
+                Nname : arr[i].name,
+                Nsection: arr[i].section,
+                NworkHourse: arr[i].workHours,
+                Nsalary: (parseInt(arr[i].salary)+50)+"$"
+            }
+            newdata.push(app);
+        }
+        
+    }
+    return newdata;
 }
 // -------------------------------------------------------------------------------------------------------
 
