@@ -95,16 +95,32 @@ const objLat = (obj) => {
 const cvFormatter = (arr) => {
    
     let result= [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i <= arr.length; i++) {
         if (arr[i].yearsOfExperience >1) {
-            let app={
-                fullname:(arr[i].lastName !== null)? `${arr[i].firstName} ${arr[i].lastName} ` : `${arr[i].firstName}`,
-                tech: arr[i].tech
+            if (arr[i].LastName !== null) {
+                let app={
+                    fullname:`${arr[i].firstName} ${arr[i].LastName}`,
+                    tech: arr[i].tech
+                } 
+                result.push(app)
             }
-            result.push(app);
+            else{
+                let app={
+                    fullname: arr[i].firstName,
+                    tech: arr[i].tech
+                }
+                result.push(app)
+            }
+            // let app={
+            //     fullname:(arr[i].LastName !== null) ? `${arr[i].firstName} ${arr[i].LastName} ` : `${arr[i].firstName}`,
+            //     tech: arr[i].tech
+            // }
+            // result.push(app);
+            return result;
         }
+        
     }
-    return result;
+   
 };
 // -------------------------------------------------------------------------------------------------------
 

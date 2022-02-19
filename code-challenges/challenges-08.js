@@ -27,7 +27,11 @@
 // ["Customer Name :Romio Joliat , Age :35", "Customer Name :Mario Ristrova , Age :39", ... ]
 
 const customerAndAge = (obj) => {
-  let arr =[obj.GroupName,obj.]
+  let text = ""
+  for (const i in obj) {
+    text += obj[i]
+    console.log(`Customer Name :${obj[i]} , Age :${text}`);
+  }
   // write your code here
 };
 // -------------------------------------------------------------------------------------------------------
