@@ -113,9 +113,9 @@ const cvsFiltration = (arr) => {
 // 
 
 const vowelsFiltration = (arr) => {
-    let regx=/[aeiou]/g
-    const filterdword = arr.filter(arr => !(regx.test(arr)));
-   return filterdword
+    let regx=/[aeiou]/g;
+    const filterdword = arr.filter(ab => !(ab.match(regx)));
+    return filterdword;
     // noVowel.push(a);
 } 
 // -------------------------------------------------------------------------------------------------------
