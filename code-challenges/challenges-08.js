@@ -27,11 +27,13 @@
 // ["Customer Name :Romio Joliat , Age :35", "Customer Name :Mario Ristrova , Age :39", ... ]
 
 const customerAndAge = (obj) => {
-  let text = ""
-  for (const i in obj) {
-    text += obj[i]
-    console.log(`Customer Name :${obj[i]} , Age :${text}`);
+  let key = Object.keys(obj);
+  let result = [];
+  for(let i = 0 ; i < key.length ; i++ ){
+    let keys = key[i];
+    result.push(`Customer Name :${keys} , Age :${obj[keys]}`);
   }
+  return result;
   // write your code here
 };
 // -------------------------------------------------------------------------------------------------------
@@ -58,7 +60,15 @@ const customerAndAge = (obj) => {
 // You can solve this challenge by using Object.entries
 
 const getEntries = (obj) => {
-  // write your code here
+  
+  let key = Object.keys(obj);
+  let result = [];
+  for(let i = 0 ; i < key.length ; i++ ){
+    let keys = key[i];
+    let value = obj[keys];
+    result.push(`${keys}: ${value}`);
+}
+return result;
 };
 // -------------------------------------------------------------------------------------------------------
 
