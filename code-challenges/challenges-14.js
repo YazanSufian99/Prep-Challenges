@@ -24,10 +24,11 @@
 //
 
 const LastWord = (str) => {
-    let splited= str.split(" ");
-    return (splited.slice(splited.length-1, splited.length)).toString();
-    // let result = str.slice(str.lastIndexOf(" ") ,-1);
-    // console.log(result)
+    // let splited= str.split(" ");
+    // return (splited.slice(splited.length-1, splited.length)).toString();
+    let lastIndex=str.lastIndexOf(" ");
+    let newstr = str.slice(lastIndex + 1);
+    return newstr;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -65,20 +66,24 @@ const LastWord_2 = (str) => {
 //
 
 const replaceWords = (str) => {
-    // let res =str.replace('I','We').replace('am','are').replace('was','Were');
-    // return res
-    // var mapObj = {
-    //     cat:"we",
-    //     dog:"are",
-    //     goat:"were"
-    //  };
-    //  str = str.replace(/I|am|was/gi, function(matched){
-    //    return mapObj[matched];
-    //  });
-    str = str.replace(/I/gi, "We");
-    str = str.replace(/am/gi, "are");
-    str = str.replace(/was/gi, "were");
-    return str
+    // str = str.replace(/I/gi, "We");
+    // str = str.replace(/am/gi, "are");
+    // str = str.replace(/was/gi, "were");
+    // return str
+
+     var res=str.split(" ");
+    
+     res.splice(0,1,"We");
+     if(res[1].includes("was")){
+        
+        res.splice(1,1,"were");
+    }
+     if(res[1].includes("am")){
+    
+        res.splice(1,1,"are");
+    }
+    
+        return res.join(" ");
 }
 // -------------------------------------------------------------------------------------------------------
 
