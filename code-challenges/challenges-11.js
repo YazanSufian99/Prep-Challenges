@@ -57,11 +57,9 @@ function square(arr) {
 // Output: ['Adam Anderson', 'Ben Zeller', 'Peter Mccord', 'Fred Sagar', 'Nathan Weiss']
 
 function fullName(arr) {
-    
- let fullName = arr.map(function(s){
-   return `${s.firstName} ${s.lastName}`
-});
-
+    let names = arr.map(person => 
+         `${person.firstName} ${person.lastName}`)   
+    return names
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -128,6 +126,20 @@ function fullName(arr) {
 
 function gradesAvg(arr) {
     // write your code here
+    let newStudent = [];
+    newStudent = arr.map(value => {
+        const fullName = {}
+
+        for (let x in value) {
+
+  
+            fullName[`${x}`] = value[x]
+
+        }
+        fullName.avg = value.gradsList.reduce((a, b) => a + b, 0) / value.gradsList.length;
+        return fullName;
+    });
+    return newStudent;
 }
 // -------------------------------------------------------------------------------------------------------
 
