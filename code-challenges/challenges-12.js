@@ -74,8 +74,14 @@ const oddFiltration = (arr) => {
 const cvsFiltration = (arr) => {
     
     let result= [];
-    result = arr.filter(emp => emp.yearsOfExperience > 4 && emp.tech =="JS"
-    );
+    result = arr.filter(emp => emp.yearsOfExperience > 4 && emp.tech =="JS" && emp.LastName !== null)
+
+    let newarray = [];
+    
+    for (const i of result)
+        newarray.push({ fullName: `${i.firstName} ${i.LastName}`, tech: `${i.tech}` })
+    
+        return newarray;
     // function filterarr(arrto){
     //     for (let i = 0; i <= arrto.length; i++) {
     //         if (arrto[i].yearsOfExperience >1) {
