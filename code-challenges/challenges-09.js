@@ -20,12 +20,19 @@
 
 const arrInc = (arr) => {
     let result = [];
-    for (let i = 0; i < arr.length; i++) {
-        if  (typeof(arr[i])=='number' ) {
-            result.push(arr[i]+10)      
-        }
-    }
+    // for (let i = 0; i < arr.length; i++) {
+    //     if  (typeof(arr[i])=='number' ) {
+    //         result.push(arr[i]+10)      
+    //     }
+    // }
+    arr.forEach(i => {
+        // if  (typeof(arr[i]) === 'number' ) {
+        //     result.push(i+10);      
+        // }
+        result.push(i+10);
+    });
     return result;
+    
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -44,10 +51,10 @@ const arrInc = (arr) => {
 const roundDecimals = (arr) => {
 
     let n1 = [];
-    for (let i = 0; i < arr.length; i++) {
-        n1[i] = Math.round(arr[i]); 
-    }
-    // console.log(n1);
+    arr.forEach(i => {
+        // n1[i] += Math.round(i);
+        n1.push( Math.round(i));
+    });
     return n1
 }
 // -------------------------------------------------------------------------------------------------------
@@ -119,9 +126,9 @@ const roundDecimals = (arr) => {
 const employeesBonus = (arr) => {
     // console.log(data);
     let newdata=[];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length+1; i++) {
         // console.log(arr[i].workHours);
-        if (arr[i].workHours > 8  ) {
+        if (i.workHours > 8  ) {
          
             let app={
                 Nname :arr[i].name,
@@ -131,7 +138,7 @@ const employeesBonus = (arr) => {
             }
             newdata.push(app);
         }
-        else {
+        else if(i.workHours <= 8  ) {
             
             let app={
                 Nname : arr[i].name,
@@ -141,9 +148,10 @@ const employeesBonus = (arr) => {
             }
             newdata.push(app);
         }
-        
+     
     }
-    return newdata;
+    return newdata;   
+
 }
 // -------------------------------------------------------------------------------------------------------
 
