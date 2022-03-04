@@ -70,6 +70,10 @@ const filterLinks = (str) => {
 
 const isPalindrome = (str) => {
     // write your code here
+    var find = /[\W_]/g;
+    var lowerStr = str.toLowerCase().replace(find, '');
+    var reverseString = lowerStr.split('').reverse().join(''); 
+    return reverseString === lowerStr;
 }
 // -------------------------------------------------------------------------------------------------------
 
