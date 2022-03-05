@@ -44,15 +44,11 @@ const wordLength = (str) => {
 // Output: false
 
 const wordLetters = (str1, str2) => {
-    for (let i = 0; i < str1.length; i++) {
-        if (str2.indexOf(str1[i]) <= -1) 
-            return false;
+    if (str1.includes(str2.substring(0,str2.length-1))){
+        return true;
+    }else{
+        return false;
     }
-    for (let i = 0; i < str2.length; i++) {
-        if (str1.indexOf(str2[i]) <= -1) 
-            return false;
-    }
-    return true;
 }
 
 // -------------------------------------------------------------------------------------------------------
