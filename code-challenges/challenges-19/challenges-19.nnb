@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    let count = 0\n    let arr_s = s.split(\"\")\n    let arr_t = t.split(\"\")\n    for (let i = 0; i === count && i < s.length; i++) {\n        if (arr_s[i] === arr_t[i]) {\n            count++\n        }\n    }\n\n    let minusT = t.length - count\n    let minusS = s.length - count\n\n    let STK = k - (minusT + minusS)\n\n    if (minusT + minusS < k && t.length + s.length > k && STK % 2 !== 0) {\n        return \"No\"\n    } else if (minusT + minusS <= k) {\n        return \"Yes\"\n    } else {\n        return \"No\"\n    }\n\n}"
+                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    if (s.length + t.length < k)\n            \n        return \"Yes\";\n\n    let numOfOpertions = 0;\n\n\n\n    for (let i = 0; i <Math.min(s.length, t.length);i++) {\n\n        if (t.charAt(i) == s.charAt(i))\n            numOfOpertions++;}\n\n    if ((k - s.length - t.length + 2 * numOfOpertions) %2==0) {\n        return \"Yes\";\n   \n   \n    }\n\n    return \"No\";\n}"
             ],
             "outputs": []
         },
